@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { MainStackParamList } from "@customTypes/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Layout, Text } from "react-native-rapi-ui";
+import Calendar from "@screens/Calendar";
 
 export default function ({
     navigation,
@@ -16,7 +17,7 @@ export default function ({
                     justifyContent: "center",
                 }}
             >
-                <Text>This is the Profile tab</Text>
+                <Text>This is the Calendar tab</Text>
             </View>
         </Layout>
     );

@@ -6,8 +6,8 @@ import TabBarIcon from "@components/utils/TabBarIcon";
 import TabBarText from "@components/utils/TabBarText";
 
 import Home from "@screens/Home";
-import About from "@screens/About";
-import Profile from "@screens/Profile";
+import Calendar from "@screens/Calendar";
+import Locations from "@screens/Locations";
 
 const Tabs = createBottomTabNavigator();
 const MainTabs = () => {
@@ -38,28 +38,31 @@ const MainTabs = () => {
                 }}
             />
             <Tabs.Screen
-                name="Profile"
-                component={Profile}
+                name="Locations"
+                component={Locations}
                 options={{
                     tabBarLabel: ({ focused }) => (
-                        <TabBarText focused={focused} title="Profile" />
-                    ),
-                    tabBarIcon: ({ focused }) => (
-                        <TabBarIcon focused={focused} icon={"person"} />
-                    ),
-                }}
-            />
-            <Tabs.Screen
-                name="About"
-                component={About}
-                options={{
-                    tabBarLabel: ({ focused }) => (
-                        <TabBarText focused={focused} title="About" />
+                        <TabBarText focused={focused} title="Locations" />
                     ),
                     tabBarIcon: ({ focused }) => (
                         <TabBarIcon
                             focused={focused}
-                            icon={"ios-information-circle"}
+                            icon={"compass-outline"}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="Calendar"
+                component={Calendar}
+                options={{
+                    tabBarLabel: ({ focused }) => (
+                        <TabBarText focused={focused} title="Calendar" />
+                    ),
+                    tabBarIcon: ({ focused }) => (
+                        <TabBarIcon
+                            focused={focused}
+                            icon={"calendar-outline"}
                         />
                     ),
                 }}

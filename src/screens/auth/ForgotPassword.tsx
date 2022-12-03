@@ -21,7 +21,7 @@ import {
 
 export default function ({
     navigation,
-}: NativeStackScreenProps<AuthStackParamList, "ForgetPassword">) {
+}: NativeStackScreenProps<AuthStackParamList, "ForgotPassword">) {
     const { isDarkmode, setTheme } = useTheme();
     const [email, setEmail] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -30,13 +30,12 @@ export default function ({
         setLoading(true);
         const { error } = await supabase.auth.resetPasswordForEmail(email);
         if (!error) {
-            setLoading(false);
             alert("Check your email to reset your password!");
         }
         if (error) {
-            setLoading(false);
             alert(error.message);
         }
+        setLoading(false);
     }
     return (
         <KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
@@ -83,7 +82,7 @@ export default function ({
                                 padding: 30,
                             }}
                         >
-                            Forget Password
+                            Forgot Password
                         </Text>
                         <Text>Email</Text>
                         <TextInput

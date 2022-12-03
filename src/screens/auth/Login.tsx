@@ -163,11 +163,11 @@ export default function ({
                         >
                             <TouchableOpacity
                                 onPress={() => {
-                                    navigation.navigate("ForgetPassword");
+                                    navigation.navigate("ForgotPassword");
                                 }}
                             >
                                 <Text size="md" fontWeight="bold">
-                                    Forget password
+                                    Forgot password
                                 </Text>
                             </TouchableOpacity>
                         </View>
