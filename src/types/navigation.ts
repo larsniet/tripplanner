@@ -1,6 +1,6 @@
 export type MainStackParamList = {
     MainTabs: undefined;
-    SecondScreen: undefined;
+    GroupsPage: undefined;
 };
 
 export type AuthStackParamList = {

@@ -63,9 +63,9 @@ export default function ({
                             }
                         />
                         <Button
-                            text="Go to second screen"
+                            text="Go to groups page"
                             onPress={() => {
-                                navigation.navigate("SecondScreen");
+                                navigation.navigate("GroupsPage");
                             }}
                             style={{
                                 marginTop: 10,

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "@providers/AuthProvider";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -8,13 +8,14 @@ import Auth from "./AuthStack";
 import Loading from "@screens/utils/Loading";
 
 export default () => {
-    const auth = useContext(AuthContext);
-    const user = auth.user;
+    const context = useContext(AuthContext);
+    const user = context.user;
+    const groups = context.groups;
     return (
         <NavigationContainer>
-            {user == null && <Loading />}
-            {user == false && <Auth />}
-            {user == true && <Main />}
+            {(user == null || groups == null) && <Loading />}
+            {!user && <Auth />}
+            {user && <Main />}
         </NavigationContainer>
     );
 };
